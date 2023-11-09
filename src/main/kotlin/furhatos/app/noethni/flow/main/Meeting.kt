@@ -33,16 +33,14 @@ val FirstContact: State = state(Parent) {
         furhat.attend(users.other)
         furhat.say("I can change my face in a second like this")
         furhat.attend(users.other)
-        delay(300)
-        furhat.attend(users.other)
+        delay(400)
         furhat.character = "Kione"
-        delay(300)
+        delay(1000)
         furhat.say("let me give another example")
-
-
+        furhat.attend(users.other)
         delay(300)
         furhat.character = "Nazar"
-        delay(500)
+        delay(1000)
         furhat.say("How about this one?")
         delay(500)
         furhat.attend(users.other)
@@ -68,11 +66,14 @@ val FirstContact: State = state(Parent) {
         furhat.character = DefaultFaceAndVoice["df"]
         furhat.voice = Voice(DefaultFaceAndVoice["dv"])
 
-        furhat.say("These were a coupe of my features but let's start talking about the real deal")
+        furhat.say("These were a couple of my features but let's start talking about the real deal")
         furhat.gesture(GesturesLib.PerformTripleBlink)
         furhat.attend(users.other)
+        delay(250)
         furhat.say("I'm here as a History Teacher and I will teach you a topic that I though you will be interested in!")
         furhat.gesture(GesturesLib.PerformSmile1)
+        furhat.gesture(GesturesLib.ExpressThinking())
+        delay(1000)
         furhat.say("Yeah I think this should be enough for now.")
         goto(LastCheck)
     }
